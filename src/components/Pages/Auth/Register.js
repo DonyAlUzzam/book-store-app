@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {NavLink, Redirect} from 'react-router-dom'
 import axios from 'axios'
 import BlockUi from 'react-block-ui'
@@ -31,6 +31,15 @@ function Register() {
     const [password, setPassword] = useState('')
     const [loading, setLoading] = useState(false)
     const [goto, setGoto] = useState(false)
+    const [dataRole, setDataRole] = useState([])
+
+    async function getRole() {
+        const request = await axios.get(
+            process.env.REACT_APP_API_URL + 'roles'
+        )
+        setDataRole(request.data.data)
+        console.log(request.data, "role")
+    }
 
     const processRegister = async (e) => {
         e.preventDefault()
@@ -59,7 +68,9 @@ function Register() {
             toast.error(request.data.message, {position: toast.POSITION.TOP_CENTER});
         }
     }
-
+    useEffect(() => {
+       getRole()
+    }, [])
     return (
         <div className="main-wrapper">
             {
@@ -142,7 +153,7 @@ function Register() {
                                     </div>
                                     <div className="col-lg-12">
                                         <div className="form-group">
-                                        <Select
+                                        {/* <Select
                                             className="form-control"
                                             native
                                             value={role}
@@ -154,6 +165,18 @@ function Register() {
                                             >
                                             <option value={'5e51340738159d1ae69d01c4'}>Admin</option>
                                             <option value={'5e51340d38159d1ae69d01c5'}>User</option>
+                                            </Select> */}
+                                            <Select 
+                                            className="form-control"
+                                            native
+                                            value={role}
+                                            onChange={e => setRole(e.target.value)}>
+                                                <option value=''>Select Role</option>
+                                                {
+                                                    dataRole.map(function (item, index) {
+                                                        return (<option key={index} value={item._id}>{item.role}</option>)
+                                                    })
+                                                }
                                             </Select>
                                         </div>
                                     </div>

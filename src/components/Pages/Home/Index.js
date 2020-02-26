@@ -71,7 +71,6 @@ function CoverBook(url){
 
 function Home() {
 
-
     const classes = useStyles();
     const userData = window
         .localStorage
@@ -127,12 +126,13 @@ function Home() {
     }) : ''
 
     useEffect(() => {
-        getDataBook()
+        getDataBook(1)
         getDataCategory()
     }, [])
     return (
         <div>
             <div className="col-12">
+              
                 <div className="row"  style={{marginTop: 25}}>
                   <div className="col-7">
                     <div className={classes.search}>

@@ -8,7 +8,7 @@ import {toast} from 'react-toastify'
 
 function CoverBook(url){
     let cover = {
-      backgroundImage: `url("http://localhost:8081/${url}")`
+      backgroundImage: `url("http://54.83.150.192:3333/${url}")`
     };
     return cover;
   }
@@ -39,6 +39,7 @@ function Detail(props) {
         const request = await axios.get(
             process.env.REACT_APP_API_URL + 'book/'+props.match.params.id
         )
+        console.log(request.data)
         if (request.data.status) {
             console.log(request.data.data[0].book_name)
             setTitle(request.data.data[0].book_name)

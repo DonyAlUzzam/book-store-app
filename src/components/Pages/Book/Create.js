@@ -36,7 +36,6 @@ function Create() {
         formData.append('qty',qty)
         formData.append('cover',cover)
 
-        if(userData.role.role === 'admin'){
             setLoading(true)
             const request = await axios.post(
                 process.env.REACT_APP_API_URL + 'books',formData
@@ -57,13 +56,6 @@ function Create() {
                     autoClose: 3000
                 });
             }
-        } else{
-            toast.error("Not Authorization", {
-                position: toast.POSITION.TOP_CENTER,
-                autoClose: 3000
-            });
-            setLoading(false)
-        }  
        
     }
     const resetData = async () => {

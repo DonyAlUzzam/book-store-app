@@ -22,7 +22,6 @@ function Login() {
         if (request.data.status) {
             toast.success(request.data.message, {position: toast.POSITION.TOP_CENTER});
             window.localStorage.setItem('userData', JSON.stringify(request.data))
-            window.localStorage.setItem('userRole', JSON.stringify(request.data.role.role))
 
             setTimeout(function () {
                 window.location.href = '/'

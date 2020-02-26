@@ -61,7 +61,6 @@ function Edit(props) {
         const request = await axios.get(
             process.env.REACT_APP_API_URL + 'category'
         )
-        console.log(request.data, "d")
         setDataCategory(request.data.data)
     }
     const setFormData = async () => {

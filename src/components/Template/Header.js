@@ -3,7 +3,9 @@ import axios from 'axios'
 
 function Header(props) {
     const userData = JSON.parse(props.userData)
-    
+        if(!userData){
+            window.location.href = '/login'
+        }
     const[name, setName] = useState(userData ? userData.first_name : '')
     const processLogout = async () => {
         await axios.post(process.env.REACT_APP_API_URL + 'users/logout', {
