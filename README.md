@@ -1,8 +1,21 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+### Demo
+
+https://store-book-new.herokuapp.com/
+email: user@gmail.com
+password: 123456
+
 ## Available Scripts
 
+git clone https://github.com/DonyAlUzzam/book-store-app.git
+cd book-store-app
+
 In the project directory, you can run:
+
+### `npm install`
+
+To install all packages needed
 
 ### `npm start`
 
