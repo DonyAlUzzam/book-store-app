@@ -8,7 +8,7 @@ import {toast} from 'react-toastify'
 
 function CoverBook(url){
     let cover = {
-      backgroundImage: `url("http://54.83.150.192:3333/${url}")`
+      backgroundImage: `url('${process.env.REACT_APP_API_URL}${url}')`
     };
     return cover;
   }
