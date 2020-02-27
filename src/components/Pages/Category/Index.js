@@ -43,7 +43,6 @@ function Category() {
             }
         }
     ];
-console.log(userData, "user")
     const options = {
         filterType: 'checkbox',
         selectableRows: false
@@ -57,7 +56,6 @@ console.log(userData, "user")
         const request = await axios.get(
             process.env.REACT_APP_API_URL + 'category'
         )
-        console.log(request.data)
         const result = []
         request
             .data.data
@@ -83,7 +81,6 @@ console.log(userData, "user")
         setData(result)
     }
     const deleteData = async (id) => {
-        console.log(id,"nah")
         if(userData.role.role === "admin"){
             const requestdelete = await axios.delete(
             process.env.REACT_APP_API_URL + 'category/' + id

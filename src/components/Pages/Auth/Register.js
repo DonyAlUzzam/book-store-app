@@ -38,7 +38,6 @@ function Register() {
             process.env.REACT_APP_API_URL + 'roles'
         )
         setDataRole(request.data.data)
-        console.log(request.data, "role")
     }
 
     const processRegister = async (e) => {
@@ -153,19 +152,6 @@ function Register() {
                                     </div>
                                     <div className="col-lg-12">
                                         <div className="form-group">
-                                        {/* <Select
-                                            className="form-control"
-                                            native
-                                            value={role}
-                                            onChange={e => setRole(e.target.value)}
-                                            // inputProps={{
-                                            //     name: 'age',
-                                            //     id: 'age-native-simple',
-                                            // }}
-                                            >
-                                            <option value={'5e51340738159d1ae69d01c4'}>Admin</option>
-                                            <option value={'5e51340d38159d1ae69d01c5'}>User</option>
-                                            </Select> */}
                                             <Select 
                                             className="form-control"
                                             native

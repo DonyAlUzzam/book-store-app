@@ -66,7 +66,6 @@ function User() {
         const request = await axios.get(
             process.env.REACT_APP_API_URL + 'users'
         )
-        console.log(request.data, "role")
         const result = []
         request
             .data
@@ -95,7 +94,7 @@ function User() {
     }
     const deleteData = async id => {
         const requestdelete = await axios.delete(
-            process.env.REACT_APP_API_URL + '/user/' + id
+            process.env.REACT_APP_API_URL + 'user/' + id
         )
         if (requestdelete.data.status) {
             toast.success(requestdelete.data.message, {
