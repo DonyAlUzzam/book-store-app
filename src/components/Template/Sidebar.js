@@ -57,14 +57,6 @@ function Sidebar(props) {
                                     <span className="hide-menu">Transaction</span>
                                 </NavLink>
                             </li>
-                            <li className={(
-                                    window.location.pathname == '/user'  || window.location.pathname == '/usercreate')
-                                    ? 'sidebar-item selected'
-                                    : 'sidebar-item'}>
-                                <NavLink className="sidebar-link" aria-expanded="false" to="/user"><i data-feather="users" className="feather-icon"/>
-                                    <span className="hide-menu">User</span>
-                                </NavLink>
-                            </li>
                         </ul>
                     </nav>
                 </div>
